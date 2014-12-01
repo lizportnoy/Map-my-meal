@@ -21,23 +21,22 @@ Once the project moves into development, the press release can be used as a touc
 
 ## For Home Cooks without that Natural Timing Intuition ##
   
-##  Have you ever found yourself in the the kitchen 2 hours after you began a 'simple' side dish, wondering how you could have so wrongly estimated how long it would take you to make it? This is the tool for  those of us who have trouble gauging how long a recipe will take to make, for those of us with slow knife skills that can delay a whole dish, and for those of us who need to be making multiple dishes at once. All you need to provide is a recipe or two, a meal time, and a good gage of your own skills. We'll give you the timeline to make it happen ON TIME. ##
+ Have you ever found yourself in the the kitchen 2 hours after you began a 'simple' side dish, wondering how you could have so wrongly estimated how long it would take you to make it? This is the tool for  those of us who have trouble gauging how long a recipe will take to make, for those of us with slow knife skills that can delay a whole dish, and for those of us who need to be making multiple dishes at once. All you need to provide is a recipe or two, a meal time, and a good gage of your own skills. We'll give you the timeline to make it happen ON TIME. 
 
 
-## Miscalculating meal prep and cooktime is a massive pain that can lead to ruined recipes or two hour delays for dinner. ##
+Miscalculating meal prep and cooktime is a massive pain that can lead to ruined recipes or two hour delays for dinner. 
   
 
-## Never miscalculate your cooking and prep times again with this easy Meal mapper that lets you know when you should be performing each step of a recipe. ##
+Never miscalculate your cooking and prep times again with this easy Meal mapper that lets you know when you should be performing each step of a recipe.
   
 
-## "This tool takes the guesswork out of meal prep. Sure with a crockpot it's easy to throw it in, but what about a Thanksgiving feast? This tool lets you plan out when everything needs to get done to allow for seamless planning." - Liz, CEO and Founder ##
+ "This tool takes the guesswork out of meal prep. Sure with a crockpot it's easy to throw it in, but what about a Thanksgiving feast? This tool lets you plan out when everything needs to get done to allow for seamless planning." - Liz, CEO and Founder 
+  
+  Just plug in anticipated meal time, your recipe. and enter time estimates for each step along the way. 
   
 
-## Just plug in anticipated meal time, your recipe. and enter time estimates for each step along the way. ##
-  
-
-## "I used to always find myself serving dinner two hours after it was planned for, and half my dishes were cold by then. I now know exactly how long before a planned meal time I have to begin prepping" - Satisfied Customer ##
+"I used to always find myself serving dinner two hours after it was planned for, and half my dishes were cold by then. I now know exactly how long before a planned meal time I have to begin prepping" - Satisfied Customer
  
 
-## Wanna try? Copy your favorite recipe, assess your abilities, and plug it in.##
+###Wanna try? Copy your favorite recipe, assess your abilities, and plug it in.###
   
