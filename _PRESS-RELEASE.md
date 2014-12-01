@@ -17,28 +17,29 @@ Once the project moves into development, the press release can be used as a touc
  -->
  
 ## Heading ##
-  > Name the product in a way the reader (i.e. your target customers) will understand.
+  Map Your Meal
 
 ## Sub-Heading ##
-  > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+  A recipe timeline tool for home cooks
 
 ## Summary ##
-  > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+  Have you ever found yourself in the the kitchen 2 hours after you began a 'simple' side dish, wondering how you could have so wrongly estimated how long it would take you to make it? This is the tool for  those of us who have trouble gauging how long a recipe will take to make, for those of us with slow knife skills that can delay a whole dish, and for those of us who need to be making multiple dishes at once. All you need to provide is a recipe or two, a meal time, and a good gage of your own skills. We'll give you the timeline to make it happen ON TIME.
+
 
 ## Problem ##
-  > Describe the problem your product solves.
+  Miscalculating meal prep and cooktime is a massive pain that can lead to ruined recipes or two hour delays for dinner.
 
 ## Solution ##
-  > Describe how your product elegantly solves the problem.
+  Never miscalculate your cooking and prep times again with this easy Meal mapper that lets you know when you should be performing each step of a recipe.
 
 ## Quote from You ##
-  > A quote from a spokesperson in your company.
+  "This tool takes the guesswork out of meal prep. Sure with a crockpot it's easy to throw it in, but what about a Thanksgiving feast? This tool lets you plan out when everything needs to get done to allow for seamless planning.
 
 ## How to Get Started ##
-  > Describe how easy it is to get started.
+  Just plug in anticipated meal time, your recipe. and enter time estimates for each step along the way.
 
 ## Customer Quote ##
-  > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+ "I used to always find myself serving dinner two hours after it was planned for, and half my dishes were cold by then. I now know exactly how long before a planned meal time I have to begin prepping"
 
 ## Closing and Call to Action ##
-  > Wrap it up and give pointers where the reader should go next.
+  Copy your favorite recipe, assess your abilities, and plug it in.
