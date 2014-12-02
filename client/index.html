@@ -11,12 +11,17 @@
     <a class="Home" href='#'> Home </a>
     <p> Welcome to Map Your Meal, where you actually get some sense of time as to how long something will take you </p>
 
+    <div ng-controller='IndexController' >
+
+    <div ng-show='data.shown'>
+
     <!-- the ng-view directive is where our templates will be loaded into when naviagted to -->
     <p> Ready to get started? <p>
     
 
-    <!-- ToDo: Make this button Dissappear once clicked -->
-    <a class="recipeEntry" href="#/entry"><input type="submit" value="Map My Recipe!"></input></a>
+      <a   class="recipeEntry " href="#/entry"><input  ng-click="makeDissapear()" type="submit" value="Map My Recipe!"></input></a>
+    </div>
+    </div>
 
     <div ng-view></div>
 
@@ -24,6 +29,7 @@
     <script src="lib/angular-route/angular-route.js"></script>
     <script src="lib/moment/moment.js"></script>
     <script src="lib/underscore/underscore.js"></script>
+
 
 
     <script src="app/entry/entry.js"></script>

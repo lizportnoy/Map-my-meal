@@ -27,5 +27,14 @@ angular.module('mapYourMeal', [
       displayedRecipe: displayedRecipe,
       recipeEntry: recipeEntry
     };
-});
+})
+.controller('IndexController', function ($scope) {
+  $scope.data = {
+    shown: true
+  }
+  
+  $scope.makeDissapear = function () {
+    $scope.data.shown = !$scope.data.shown
+  }
+})
 
