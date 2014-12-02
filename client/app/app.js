@@ -21,6 +21,7 @@ angular.module('mapYourMeal', [
     var recipeEntry = {};
     var displayedRecipe = {}
     recipeEntry.steps = [];
+    displayedRecipe.steps = [];
 
     return {
       displayedRecipe: displayedRecipe,

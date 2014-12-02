@@ -1,6 +1,9 @@
 angular.module('mapYourMeal.entry', [])
 
 .controller('EntryController', function ($scope, RecipeStorage) {
+  // RecipeStorage.recipeEntry = {};
+  // RecipeStorage.displayedRecipe = {steps: []};
+
 
   $scope.startRecipe = function () {
     RecipeStorage.recipeEntry['recipeName'] = $scope.entry.recipeName;
@@ -9,14 +12,12 @@ angular.module('mapYourMeal.entry', [])
 
   $scope.addSteps = function () {
     RecipeStorage.recipeEntry.steps.push([$scope.entry.step, $scope.entry.timeEstimate]);
-    console.log(RecipeStorage)
 
   }
 
   $scope.sendRecipe = function () {
     RecipeStorage.displayedRecipe = RecipeStorage.recipeEntry;
     RecipeStorage.recipeEntry = {};
-    console.log(RecipeStorage);
   }
 
 });
