@@ -28,9 +28,13 @@ angular.module('mapYourMeal', [
       recipeEntry: recipeEntry
     };
 })
-.controller('IndexController', function ($scope) {
+.controller('IndexController', function ($scope, $location) {
   $scope.data = {
     shown: true
+  }
+
+  if ($location.absUrl() !== 'http://localhost:3000/') {
+    $scope.data.shown = false;
   }
   
   $scope.makeDissapear = function () {

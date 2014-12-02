@@ -1,13 +1,12 @@
-<div id='container' ng-controller='EntryController' >
-  <br>
+<div id='entryContainer' ng-controller='EntryController' >
 
-  <form ng-show='notSubmitted' name="RecipeEntry" novalidate>
+  <form ng-show='screencontrols.notSubmitted' name="RecipeEntry" novalidate >
     <label>Recipe Name:</label>
     <input name='recipeName' ng-model='entry.recipeName'  type='text' required/>
     <label>Meal Time:</label>
     <input name='mealTime' ng-model='entry.mealTime' type='time' required/>
     <br>
-    <button ng-click='RecipeEntry.$setPristine(); startRecipe()'> Start Adding Steps</button>
+    <button class="submitRecipeDetails" ng-click='RecipeEntry.$setPristine(); startRecipe()'> Start Adding Steps</button>
   </form>
 <!-- 
   <div ng-show='RecipeEntry.$invalid' &&
@@ -15,17 +14,20 @@
       Must enter a Recipe Name.</div>
  -->
 
-  <form  ng-show="hiddenSteps" name="RecipeStep" novalidate>
-    <label>Step:</label>
-    <input name='step' ng-model='entry.step'  type='text' required/>
-    <br>
+  <form  ng-show="screencontrols.hiddenSteps" name="RecipeStep" class='recipeSteps'novalidate>
+    <div class="steps">
+      <label class="stepslabel">Recipe Step:</label>
+      <textarea name='step' ng-model='entry.step'  type='text' class='recipeSteps' required></textarea>
+    </div>
     <label>Time Estimate (minutes):</label>
     <input name='timeEst' ng-model='entry.timeEstimate' type='number' min="0" required/>
     <br>
-    <button ng-click= 'RecipeEntry.$setPristine(); addSteps()'> Submit Step</button>
+    <button class="submitRecipeDetails" ng-click= 'RecipeEntry.$setPristine(); addSteps()'> Submit Step</button>
   </form>
 
-   <a ng-show='submitRecipe' class="recipeDisplay" href="#/display"><input ng-click= "sendRecipe()" type="submit" value="I'm Done! Take me to my map" </input></a>
+   <a ng-show='screencontrols.submitRecipe'  href="#/display" >
+    <button ng-click= "sendRecipe()" type="submit" class="sendRecipe submitRecipeDetails "  > Show me the Plan! </button>
+  </a>
 
 
 </div>

@@ -9,7 +9,8 @@ angular.module('mapYourMeal.display', [])
   $scope.timeRemaining = RecipeStorage.displayedRecipe.steps.reduce(function (accumulator, recipeStep) {
     return accumulator + recipeStep[1];
   },0);
-
+  $scope.totalTime = $scope.timeRemaining;
+  
   $scope.addTimeCounters = function () {
     _.each(RecipeStorage.displayedRecipe.steps, function (elem) {
        elem.push($scope.timeRemaining);

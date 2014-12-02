@@ -3,32 +3,49 @@
   <head>
     <meta charset="utf-8" />
     <title>Map Your Meal</title>
+    <link rel="stylesheet" type="text/css" href="styles/normalize.css" />
     <link rel="stylesheet" type="text/css" href="styles/style.css" />
+    <link href='http://fonts.googleapis.com/css?family=Brawler|Lobster|Sigmar+One|Droid+Serif:400,700,400italic|Pacifico|Luckiest+Guy|Allan:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,100italic,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
   </head>
   <body>
     
-    
-    <a class="Home" href='#'> Home </a>
-    <p> Welcome to Map Your Meal, where you actually get some sense of time as to how long something will take you </p>
+    <div class='pageHeading'>
+     
+        <a class="homeLink" href='#'> <img class="logo" src="assets/mymLogo.png"><br>   Home </a>
+       <h1 id="pagetitle"> Map your Meal </h1>
+
+    </div> <!--pageheading -->
+
+
+
+    <div ng-view class="viewContainer clearfix"></div>
 
     <div ng-controller='IndexController' >
 
-    <div ng-show='data.shown'>
+      <div ng-show='data.shown'>
 
-    <!-- the ng-view directive is where our templates will be loaded into when naviagted to -->
-    <p> Ready to get started? <p>
-    
+        <p class="intro"> Welcome to Map Your Meal, where we make it easy for you to plan your cook and prep times.  </p>
 
-      <a   class="recipeEntry " href="#/entry"><input  ng-click="makeDissapear()" type="submit" value="Map My Recipe!"></input></a>
-    </div>
-    </div>
+        <p class="intro"> Ready to get started? <p>
 
-    <div ng-view></div>
+          <a href="#/entry" ><input class="recipeEntry" ng-click="makeDissapear()"  type="submit" value="Map My Meal!"></input></a>
+
+      </div>
+    </div> <!--ng controller -->
 
     <script src="lib/angular/angular.js"></script>
     <script src="lib/angular-route/angular-route.js"></script>
     <script src="lib/moment/moment.js"></script>
     <script src="lib/underscore/underscore.js"></script>
+
+    <!-- <script src="lib/jquery/src/jquery.js"></script>
+    <script src="lib/jquery-ui/ui/jquery-ui.js"></script>
+    <script src="lib/angular-ui-calendar/src/calendar.js"></script>
+    <script src="lib/fullcalendar/dist/fullcalendar.js"></script>
+    <script src="lib/fullcalendar/dist/gcal.js"></script>
+  -->
+
 
 
 

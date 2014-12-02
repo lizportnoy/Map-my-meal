@@ -24,7 +24,9 @@
     "angular-ui-router": "~0.2.13",
     "ngFx": "v1.0.4",
     "underscore": "~1.7.0",
-    "moment": "~2.8.4"
+    "moment": "~2.8.4",
+    "fullcalendar": "~2.2.3",
+    "angular-ui-calendar": "latest"
   },
   "resolutions": {
     "bootstrap": "~3.3.1"

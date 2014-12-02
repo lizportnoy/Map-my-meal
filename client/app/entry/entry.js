@@ -2,16 +2,18 @@ angular.module('mapYourMeal.entry', [])
 
 .controller('EntryController', function ($scope, RecipeStorage) {
 
-  $scope.notSubmitted = true;
-  $scope.hiddenSteps = false;
-  $scope.submitRecipe = false;
+  $scope.screencontrols = {
+    notSubmitted : true,
+    hiddenSteps : false,
+    submitRecipe : false
+  };
 
   $scope.startRecipe = function () {
     RecipeStorage.recipeEntry['recipeName'] = $scope.entry.recipeName;
     RecipeStorage.recipeEntry['mealTime'] = $scope.entry.mealTime;
-    $scope.notSubmitted = false;
-    $scope.hiddenSteps = true;
-    $scope.submitRecipe = true;
+    _.each($scope.screencontrols, function (val, key, obj) {
+      obj[key] = !val;
+    })
     RecipeStorage.recipeEntry.steps = [];
   }
 
