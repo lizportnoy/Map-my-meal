@@ -1,0 +1,21 @@
+<div id='container' ng-controller='EntryController' >
+  <br>
+
+  <form name="RecipeEntry">
+    <label>Recipe Name:</label>
+    <input name='recipeName' type='text'/>
+    <br>
+    <label>ServingTime:</label>
+    <input name='servingTime' type='time'/>
+    <br>
+    <button>Submit</button>
+  </form>
+
+
+  <input type=submit ng-click="addFormSpace()" name="add Recipe Step"/>
+
+   <a class="recipeDisplay" href="#/display"><input type="submit" value="I'm Done! Take me to my map" </input></a>
+
+
+</div>
+

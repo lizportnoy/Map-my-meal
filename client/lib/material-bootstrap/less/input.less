@@ -1,0 +1,92 @@
+input.text-field {
+  font-family: "robotoregular";
+  font-size: 14px;
+  background-color: transparent;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: 1px solid @grey300;
+  .rounded-corners(0);
+  color: @grey600;
+  padding: 20px 0 8px 0;
+  margin-bottom: 8px;
+
+  &::-webkit-input-placeholder,
+  &::-moz-placeholder,
+  &:-ms-input-placeholder {
+    font-family: "robotothin" !important;
+  }
+
+  &:focus {
+    outline: none;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 2px solid @blue;
+    margin-bottom: 7px;
+  }
+
+  &.dark {
+    color : @grey200;
+    border-color: @grey600;
+
+    &:focus {
+      border-color: @blue;
+    }
+  }
+
+  .colors-focus(length(@colors), @colors, border-color);
+
+  &.error {
+    border-bottom: 2px solid @red;
+    &:focus {
+      border-color: @red;
+    }
+  }
+}
+
+div.error-field {
+  font-size: 12px;
+  margin-top: -5px;
+  margin-bottom: 2px;
+  color: @red500;
+}
+
+div.floating-label {
+  position: relative;
+
+  > label {
+    font-family: "robotoregular";
+    position: absolute;
+    top: 24px;
+    left: 0;
+    transition: 0.15s;
+    color: @grey500;
+    font-size: 14px;
+    font-weight: normal;
+    cursor: text;
+  }
+
+  > input.text-field:focus + label, > input.text-field + label.show-float {
+    top: 0;
+    font-size: 11px;
+    cursor: inherit;
+  }
+
+  > input.text-field:focus + label {
+    color: @blue;
+  }
+
+  .text-field-colors(@index, @colors, @type) when (@index > 0) {
+    .text-field-colors(@index - 1, @colors, @type);
+    @color : e(extract(@colors, @index));
+    > input.text-field.@{color}:focus + label {
+      color: @@color;
+    }
+  }
+  .text-field-colors(length(@colors), @colors, border-color);
+
+  > input.text-field.error:focus + label {
+    color : @red500;
+  }
+}

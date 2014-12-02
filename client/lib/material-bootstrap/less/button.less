@@ -1,0 +1,260 @@
+.btn-raised{
+  .z-depth-1;
+  display: inline-block;
+  outline: none;
+  background-color: @grey50;
+  color: @grey800;
+  font-family: 'robotomedium';
+  font-size: 14px;
+  border: 1px solid @grey50;
+  text-decoration: none;
+  cursor: pointer;
+  vertical-align: middle;
+  .border-top-radius(2px);
+  .border-bottom-radius(2px);
+  padding: 5px 20px;
+  text-transform: uppercase;
+  margin: 5px 8px;
+  height: 36px;
+
+  i:first-of-type{
+    float: left;
+    margin-left: -10px;
+    margin-right: 10px;
+    font-size: 20px;
+  }
+
+  &:hover{
+    background-color: @grey200;
+    border-color: @grey200;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &:active{
+    .z-depth-2;
+    background-color: @grey300;
+    border-color: @grey300;
+  }
+
+  &:disabled{
+    .z-depth-0;
+    background-color: @grey500;
+    border-color: @grey500;
+    color: @grey1000;
+    .opacity(0.2);
+    cursor: inherit;
+  }
+
+  &.dark{
+    background-color: @blue500;
+    border-color: @blue500;
+    color: @grey100;
+    &:hover{
+      background-color: @blue600;
+      border-color: @blue600;
+    }
+    &:active{
+      background-color: @blue700;
+      border-color: @blue700;
+    }
+    &:disabled{
+      .z-depth-0;
+      background-color: @grey500;
+      border-color: @grey500;
+      color: @grey2000;
+      .opacity(0.2);
+    }
+  }
+
+  .buttons-colors(@index, @colors, @type) when (@index > 0) {
+    .buttons-colors(@index - 1, @colors, @type);
+    @color : e(extract(@colors, @index));
+    &.@{color} {
+      background-color: @@c;
+      border-color: @@c;
+      color: contrast(@@c, @grey900, @grey100);
+      @c : "@{color}500";
+      &:hover{
+        background-color: @@c;
+        border-color: @@c;
+        @c : "@{color}600";
+      }
+      &:active{
+        background-color: @@c;
+        border-color: @@c;
+        @c : "@{color}700";
+      }
+      &:disabled{
+        .z-depth-0;
+        background-color: @grey500;
+        border-color: @grey500;
+        color: @grey1000;
+        .opacity(0.2);
+      }
+      &.dark{
+        &:disabled{
+          color: @grey2000;
+        }
+      }
+    }
+  }
+  .buttons-colors(length(@colors), @colors, border-color);
+}
+
+.btn-flat{
+  outline: none;
+  color: @grey800;
+  background-color: transparent;
+  font-family: 'robotomedium';
+  font-size: 14px;
+  border: 1px solid transparent;
+  .border-top-radius(2px);
+  .border-bottom-radius(2px);
+  text-decoration: none;
+  padding: 5px 20px;
+  text-transform: uppercase;
+  margin: 5px 8px;
+  height: 36px;
+  vertical-align: middle;
+  display: inline-block;
+  cursor: pointer;
+
+  i:first-of-type{
+    float: left;
+    margin-left: -10px;
+    margin-right: 10px;
+    font-size: 20px;
+  }
+
+  &:hover{
+    background-color: @grey200;
+    border-color: @grey200;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &:active{
+    background-color: @grey300;
+    border-color: @grey300;
+  }
+
+  &:disabled{
+    background-color: @grey500;
+    border-color: @grey500;
+    color: @grey1000;
+    .opacity(0.2);
+    cursor: inherit;
+  }
+
+  &.dark{
+    color: @grey50;
+
+    &:hover{
+      background-color: @grey600;
+      border-color: @grey600;
+    }
+
+    &:active{
+      background-color: @grey700;
+      border-color: @grey700;
+    }
+
+    &:disabled{
+      background-color: @grey500;
+      border-color: @grey500;
+      color: @grey2000;
+      .opacity(0.2);
+    }
+  }
+
+  .buttons-colors(@index, @colors, @type) when (@index > 0) {
+    .buttons-colors(@index - 1, @colors, @type);
+    @color : e(extract(@colors, @index));
+    &.@{color} {
+      color: @@c;
+      @c : "@{color}500";
+      &:hover{
+        background-color: @@c;
+        border-color: @@c;
+        @c : "@{color}50";
+      }
+      &:active{
+        background-color: @@c;
+        border-color: @@c;
+        @c : "@{color}100";
+      }
+      &:disabled{
+        background-color: @grey500;
+        border-color: @grey500;
+        color: @grey1000;
+        .opacity(0.2);
+      }
+      &.dark{
+        &:hover{
+          background-color: @@c;
+          border-color: @@c;
+          @c : "@{color}100";
+        }
+        &:active{
+          background-color: @@c;
+          border-color: @@c;
+          @c : "@{color}200";
+        }
+        &:disabled{
+          color: @grey2000;
+          background-color: @grey500;
+          border-color: @grey500;
+        }
+      }
+    }
+  }
+  .buttons-colors(length(@colors), @colors, border-color);
+}
+
+.btn-floating-action{
+  .btn-raised;
+  text-align: center;
+  width: 56px;
+  height: 56px;
+  padding: 10px;
+  font-size: 24px;
+  .rounded-corners(50%);
+  i:first-of-type{
+    float: none;
+    font-size: inherit;
+    margin: 0;
+  }
+
+  &.mini{
+    width: 40px;
+    height: 40px;
+    padding: 4px 3px;
+  }
+}
+
+.btn-flat-other{
+  .btn-flat;
+  .rounded-corners(50%);
+  text-align: center;
+  width: 56px;
+  height: 56px;
+  padding: 10px;
+  font-size: 24px;
+
+  i:first-of-type{
+    float: none;
+    font-size: inherit;
+    margin: 0;
+  }
+
+  &.mini{
+    width: 40px;
+    height: 40px;
+    padding: 4px 3px;
+  }
+}
+
+a.btn-raised, a.btn-flat{
+  padding-top: 7px;
+}

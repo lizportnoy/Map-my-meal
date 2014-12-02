@@ -1,0 +1,264 @@
+.material-nav {
+  position: relative;
+  overflow: visible;
+  .nav, &.nav {
+    margin-bottom: 0;
+    padding-left: 0; // Override default ul/ol
+    list-style: none;
+    &:extend(.clearfix all);
+
+    > li {
+      position: relative;
+      display: block;
+
+      > a {
+        position: relative;
+        display: block;
+        &:hover,
+        &:focus {
+          text-decoration: none;
+          background-color: @nav-link-hover-bg;
+        }
+      }
+
+      // Disabled state sets text to gray and nukes hover/tab effects
+      &.disabled > a {
+        color: @nav-disabled-link-color;
+
+        &:hover,
+        &:focus {
+          color: @nav-disabled-link-hover-color;
+          text-decoration: none;
+          background-color: transparent;
+          cursor: not-allowed;
+        }
+      }
+    }
+
+    // Open dropdowns
+    .open > a {
+      &,
+      &:hover,
+      &:focus {
+        background-color: @nav-link-hover-bg;
+        border-color: @link-color;
+      }
+    }
+
+    // Prevent IE8 from misplacing imgs
+    //
+    // See https://github.com/h5bp/html5-boilerplate/issues/984#issuecomment-3985989
+    > li > a > img {
+      max-width: none;
+    }
+  }
+
+  > .nav-content {
+    overflow: hidden;
+    > .nav {
+      width: 5000px;
+    }
+  }
+
+  &[role=scroll], &[role=more] {
+    position: relative;
+    height: 48px;
+    .nav-scroll-left {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 72px;
+      background-color: @tab-bckg-color;
+      text-align: right;
+    }
+    .nav-scroll-right {
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 72px;
+      background-color: @tab-bckg-color;
+    }
+    .nav-scroll-left > a, .nav-scroll-right > a {
+      text-decoration: none;
+      font-size: 45px;
+      cursor: pointer;
+      line-height: 51px;
+      display : none;
+      color : @tab-txt-color;
+    }
+    .nav-content {
+      position: absolute;
+      left: 72px;
+      right: 72px;
+      top: 0;
+      bottom: 0;
+      text-align: left;
+    }
+    .nav-tabs {
+      position: absolute;
+    }
+  }
+
+  .nav-tabs, &.nav-tabs {
+    height: 48px;
+    background-color: @tab-bckg-color;
+    margin-top: 0;
+
+    div.selected {
+      position: absolute;
+      min-width: 95px;
+      background-color: @tab-selector;
+      bottom: 0;
+      left: 0;
+      height: 3px;
+    }
+
+    > li {
+      float: left;
+      height: 100%;
+
+      // Actual tabs (as links)
+      > a {
+        cursor: pointer;
+        font-family: "robotomedium";
+        text-transform: uppercase;
+        height: 100%;
+        padding: 0 5px;
+        line-height: 48px;
+        color: @tab-txt-color;
+        min-width: 95px;
+        text-align: center;
+        transition: background-color 0.3s;
+        opacity: 0.6;
+        &:active, &:link, &:visited {
+          background-color: transparent;
+        }
+        &:hover {
+          background-color: @tab-bckg-hover;
+          opacity: 1;
+        }
+      }
+
+      // Active state, and its :hover to override normal :hover
+      &.active > a {
+        opacity: 1;
+        color: @tab-txt-selected;
+      }
+
+      &.material-dropdown {
+        position: inherit;
+      }
+    }
+    // pulling this in mainly for less shorthand
+    &.nav-justified {
+      .nav-justified();
+      .nav-tabs-justified();
+    }
+  }
+
+  .nav-tabs-colors(@index, @colors) when (@index > 0) {
+    .nav-tabs-colors(@index - 1, @colors);
+    @color : e(extract(@colors, @index));
+    &[data-border=@{color}] {
+      div.selected{
+        background-color: @@color;
+      }
+    }
+    &[data-background=@{color}] {
+      .nav-tabs , .nav-scroll-left, .nav-scroll-right {
+        background-color: @@color;
+      }
+      .nav-tabs > li > a {
+        color: contrast(@@color, @grey900, @grey50);
+        &:hover {
+          @c : "@{color}400";
+          background-color: @@c;
+        }
+      }
+      .nav-scroll-left > a, .nav-scroll-right > a {
+        color: contrast(@@color, @grey900, @grey50);
+      }
+    }
+    &[data-color=@{color}] {
+      .nav-tabs > li.active > a {
+        color : @@color;
+      }
+    }
+  }
+  .nav-tabs-colors(length(@colors), @colors);
+}
+
+// Nav variations
+// --------------------------------------------------
+
+// Justified nav links
+// -------------------------
+
+.nav-justified {
+  width: 100%;
+
+  > li {
+    float: none;
+    > a {
+      text-align: center;
+      margin-bottom: 5px;
+    }
+  }
+
+  @media (min-width: @screen-sm-min) {
+    > li {
+      display: table-cell;
+      width: 1%;
+      > a {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+// Move borders to anchors instead of bottom of list
+//
+// Mixin for adding on top the shared `.nav-justified` styles for our tabs
+.nav-tabs-justified {
+  border-bottom: 0;
+
+  > li > a {
+    // Override margin from .nav-tabs
+    margin-right: 0;
+    border-radius: @border-radius-base;
+  }
+
+  > .active > a,
+  > .active > a:hover,
+  > .active > a:focus {
+    border: 1px solid @nav-tabs-justified-link-border-color;
+  }
+
+  @media (min-width: @screen-sm-min) {
+    > li > a {
+      border-bottom: 1px solid @nav-tabs-justified-link-border-color;
+      border-radius: @border-radius-base @border-radius-base 0 0;
+    }
+    > .active > a,
+    > .active > a:hover,
+    > .active > a:focus {
+      border-bottom-color: @nav-tabs-justified-active-link-border-color;
+    }
+  }
+}
+
+
+// Tabbable tabs
+// -------------------------
+
+// Hide tabbable panes to start, show them when `.active`
+.tab-content {
+  > .tab-pane {
+    display: none;
+  }
+  > .active {
+    display: block;
+  }
+}

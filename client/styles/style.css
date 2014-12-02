@@ -1,0 +1,85 @@
+.active-state {
+  border: 2px white dotted;
+}
+.links {
+  margin-left: 30px;
+  margin-right: 30px;
+  min-height: 400px;
+  min-width: 1200px;
+}
+
+.links .link {
+  border-bottom: rgba(0,0,0,0.1) solid 2px;
+  margin-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: relative;
+}
+
+.search-box {
+  max-height: 100px;
+  height: 100px;
+}
+
+.title {
+  color: rgba(0,0,0,0.50);
+}
+
+div + .no-result {
+  display: none;
+}
+
+
+.group        {
+  position:relative;
+  margin-bottom:45px;
+}
+
+/* LABEL ======================================= */
+label {
+  color:#999;
+  font-size:18px;
+  font-weight:normal;
+  position:absolute;
+  pointer-events:none;
+  left:5px;
+  top:10px;
+  transition:0.2s ease all;
+  -moz-transition:0.2s ease all;
+  -webkit-transition:0.2s ease all;
+}
+
+/* active state */
+
+/* BOTTOM BARS ================================= */
+.bar  { position:relative; display:block; width:300px; }
+.bar:before, .bar:after   {
+  content:'';
+  height:2px;
+  width:0;
+  bottom:1px;
+  position:absolute;
+  background:#5264AE;
+  transition:0.2s ease all;
+  -moz-transition:0.2s ease all;
+  -webkit-transition:0.2s ease all;
+}
+.bar:before {
+  left:50%;
+}
+.bar:after {
+  right:50%;
+}
+
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+  position:absolute;
+  height:60%;
+  width:100px;
+  top:25%;
+  left:0;
+  pointer-events:none;
+  opacity:0.5;
+}
+

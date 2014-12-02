@@ -1,0 +1,507 @@
+.material-radio{
+  input[type=radio]{
+    display: none;
+    + label{
+      .rounded-corners(50%);
+      position: relative;
+      padding: 6px;
+      cursor: pointer;
+      display: inline-block;
+      margin: 0 3px 0 2px;
+      border: 2px solid @grey700;
+
+      .focus{
+        .rounded-corners(50%);
+        .animated;
+        position: absolute;
+        left: -14px;
+        top: -14px;
+        padding: 20px;
+        opacity: 0.4 !important;
+        display: none;
+        -webkit-animation-duration: 0.1s;
+        -moz-animation-duration: 0.1s;
+        -o-animation-duration: 0.1s;
+        animation-duration: 0.1s;
+      }
+
+      .checked{
+        .rounded-corners(50%);
+        .animated;
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        padding: 4px;
+        background-color: @green;
+        display: none;
+        -webkit-animation-duration: 0.1s;
+        -moz-animation-duration: 0.1s;
+        -o-animation-duration: 0.1s;
+        animation-duration: 0.1s;
+      }
+
+      &:active .focus{
+        display: block;
+        background-color: @green;
+        .zoomIn;
+      }
+    }
+
+    &:checked + label{
+      border-color: @green;
+
+      .checked{
+        display: block;
+      }
+
+      &:active .focus{
+        background-color: @grey600 !important;
+        .zoomIn;
+      }
+    }
+  }
+
+  &.dark{
+    input[type=radio]{
+      + label {
+        border-color: @grey300;
+      }
+      &:checked + label{
+        border-color: @green;
+      }
+    }
+  }
+
+  .radio-colors(@index, @colors) when (@index > 0) {
+    .radio-colors(@index - 1, @colors);
+    @color : e(extract(@colors, @index));
+
+    &.@{color} {
+      input[type=radio]{
+        + label:active .focus {
+          background-color: @@color;
+        }
+        + label .checked {
+          background-color: @@color;
+        }
+        &:checked + label{
+          border-color: @@color;
+        }
+      }
+    }
+  }
+  .radio-colors(length(@colors), @colors);
+
+  input[type=radio]:disabled {
+    + label{
+      border-color: @grey500 !important;
+
+      .focus{
+        background-color: @grey600 !important;
+      }
+    }
+
+    &:checked + label{
+      border-color: @grey500 !important;
+      .checked{
+        background-color: @grey500 !important;
+      }
+    }
+  }
+}
+
+label.material-radio{
+  font-family: "robotoregular";
+  font-size: 14px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  display: block;
+  text-transform: capitalize;
+
+  &.inline{
+    display: inline-block;
+    margin-right: 20px;
+  }
+
+  input[type=radio] + label{
+    margin-bottom: -3px;
+  }
+
+  &:active input[type=radio]{
+    + label .focus{
+      display: block;
+      background-color: @green;
+      .zoomIn;
+    }
+
+    &:checked + label .focus{
+      background-color: @grey600 !important;
+      .zoomIn;
+    }
+  }
+
+  .radio-colors(@index, @colors) when (@index > 0) {
+    .radio-colors(@index - 1, @colors);
+    @color : e(extract(@colors, @index));
+
+    &:active.@{color} {
+      input[type=radio]{
+        + label .focus {
+          background-color: @@color;
+          .zoomIn;
+        }
+        &:checked + label{
+          border-color: @@color;
+          .zoomIn;
+        }
+      }
+    }
+  }
+  .radio-colors(length(@colors), @colors);
+};
+
+.material-checkbox{
+  input[type=checkbox]{
+    display: none;
+    + label {
+      .rounded-corners(2px);
+      position: relative;
+      padding: 6px;
+      cursor: pointer;
+      display: inline-block;
+      margin: 0 5px 0 2px;
+      border: 2px solid @grey700;
+
+      .focus{
+        .rounded-corners(50%);
+        .animated;
+        position: absolute;
+        left: -14px;
+        top: -14px;
+        padding: 20px;
+        opacity: 0.4 !important;
+        display: none;
+        -webkit-animation-duration: 0.1s;
+        -moz-animation-duration: 0.1s;
+        -o-animation-duration: 0.1s;
+        animation-duration: 0.1s;
+      }
+
+      .checked{
+        .animated;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: @green;
+        display: none;
+        -webkit-animation-duration: 0.1s;
+        -moz-animation-duration: 0.1s;
+        -o-animation-duration: 0.1s;
+        animation-duration: 0.1s;
+        color: @grey2000;
+        font-size: 13px;
+        line-height: 13px;
+        height: 12px;
+        width: 12px;
+        &:before{
+          font-family: "materialicons";
+          content: "\e73e";
+        }
+      }
+
+      &:active .focus{
+        display: block;
+        background-color: @green;
+        .zoomIn;
+      }
+    }
+    &:checked + label{
+      border-color: @green;
+
+      .checked{
+        display: block;
+        .rotateIn;
+      }
+
+      &:active .focus{
+        background-color: @grey600 !important;
+        .zoomIn;
+      }
+    }
+  }
+
+  &.dark{
+    input[type=checkbox]{
+      + label {
+        border-color: @grey300;
+      }
+      &:checked + label{
+        border-color: @green;
+      }
+    }
+  }
+
+  .checkbox-colors(@index, @colors) when (@index > 0) {
+    .checkbox-colors(@index - 1, @colors);
+    @color : e(extract(@colors, @index));
+
+    &.@{color} {
+      input[type=checkbox]{
+        + label:active .focus {
+          background-color: @@color;
+        }
+        + label .checked {
+          background-color: @@color;
+        }
+        &:checked + label{
+          border-color: @@color;
+        }
+      }
+    }
+  }
+  .checkbox-colors(length(@colors), @colors);
+
+  input[type=checkbox]:disabled {
+    + label {
+      border-color: @grey500 !important;
+
+      .focus{
+        background-color: @grey600 !important;
+      }
+
+      .checked{
+        background-color: @grey500 !important;
+      }
+    }
+    &:checked + label{
+      border-color: @grey500 !important;
+    }
+  }
+}
+
+label.material-checkbox{
+  font-family: "robotoregular";
+  font-size: 14px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  display: block;
+  text-transform: capitalize;
+
+  &.inline{
+    display: inline-block;
+    margin-right: 20px;
+  }
+
+  input[type=checkbox] + label{
+    margin-bottom: -3px;
+  }
+
+  &:active input[type=checkbox]{
+    + label .focus{
+      display: block;
+      background-color: @green;
+      .zoomIn;
+    }
+
+    &:checked + label .focus{
+      background-color: @grey600 !important;
+      .zoomIn;
+    }
+  }
+
+  .checkbox-colors(@index, @colors) when (@index > 0) {
+    .checkbox-colors(@index - 1, @colors);
+    @color : e(extract(@colors, @index));
+
+    &:active.@{color} {
+      input[type=checkbox]{
+        + label .focus {
+          background-color: @@color;
+          .zoomIn;
+        }
+        &:checked + label{
+          border-color: @@color;
+          .zoomIn;
+        }
+      }
+    }
+  }
+  .checkbox-colors(length(@colors), @colors);
+};
+
+.material-switch{
+  display: inline-block;
+  position: relative;
+  margin: 2px 5px;
+  height: 24px;
+  width: 45px;
+
+  input[type=checkbox]{
+    display: none;
+
+    + label {
+      cursor: pointer;
+      width: 100%;
+      height: 100%;
+
+      .line{
+        position: absolute;
+        left: 5px;
+        right: 5px;
+        top: 11px;
+        bottom: 11px;
+        background-color: @grey400;
+        -webkit-transition: all 0.3s ease-out;
+        -moz-transition: all 0.3s ease-out;
+        transition: all 0.3s ease-out;
+      }
+
+      .selector{
+        .rounded-corners(50%);
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: 2px solid @grey600;
+        background-color: @lightBackground;
+        width: 22px;
+        height: 22px;
+        -webkit-transition: all 0.3s ease-out;
+        -moz-transition: all 0.3s ease-out;
+        transition: all 0.3s ease-out;
+
+        .focus{
+          .rounded-corners(50%);
+          .animated;
+          position: absolute;
+          left: -15px;
+          top: -15px;
+          padding: 24px;
+          opacity: 0.4 !important;
+          display: none;
+          -webkit-animation-duration: 0.1s;
+          -moz-animation-duration: 0.1s;
+          -o-animation-duration: 0.1s;
+          animation-duration: 0.1s;
+        }
+      }
+
+      &:active .selector .focus{
+        .zoomIn;
+        background-color: @grey400;
+        display: block;
+      }
+    }
+
+    &:checked{
+      + label{
+        .line {
+          background-color: @green;
+        }
+
+        .selector{
+          left: 23px;
+          border-color: @green;
+          background-color: @green;
+
+          .focus{
+            background-color: @green;
+          }
+        }
+      }
+    }
+
+    &:disabled {
+      + label {
+        .selector{
+          border-color: @grey400 !important;
+        }
+      }
+      &:checked + label {
+        .line {
+          background-color: @grey400 !important;
+        }
+        .selector{
+          border-color: @grey400 !important;
+          background-color: @grey400 !important;
+          .focus{
+            background-color: @grey400 !important;
+          }
+        }
+      }
+    }
+  }
+
+  &.dark input[type=checkbox] {
+    + label{
+      .line{
+        background-color: @grey600;
+      }
+      .selector{
+        background-color: @darkBackground;
+        border-color: @grey500;
+        .focus{
+          background-color: @grey700;
+        }
+      }
+    }
+
+    &:checked{
+      + label{
+        .line {
+          background-color: @green;
+        }
+
+        .selector{
+          left: 23px;
+          border-color: @green;
+          background-color: @green;
+
+          .focus{
+            background-color: @green;
+          }
+        }
+      }
+    }
+
+    &:disabled{
+      + label{
+        .line{
+          background-color: @grey700 !important;
+        }
+        .selector{
+          border-color: @grey700 !important;
+        }
+      }
+
+      &:checked{
+        + label{
+          .selector{
+            background-color: @grey700 !important;
+            .focus{
+              background-color: @grey700 !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .switch-colors(@index, @colors) when (@index > 0) {
+    .switch-colors(@index - 1, @colors);
+    @color : e(extract(@colors, @index));
+
+    &.@{color} input[type=checkbox]:checked + label{
+      .line {
+        background-color: @@color;
+      }
+      .selector{
+        border-color: @@color;
+        background-color: @@color;
+        .focus{
+          background-color: @@color;
+        }
+      }
+    }
+  }
+  .switch-colors(length(@colors), @colors);
+}

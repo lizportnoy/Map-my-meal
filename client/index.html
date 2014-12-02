@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="mapYourMeal">
+  <head>
+    <meta charset="utf-8" />
+    <title>Map Your Meal</title>
+    <link rel="stylesheet" type="text/css" href="styles/style.css" />
+  </head>
+  <body>
+    
+    
+    <a class="Home" href='#'> Home </a>
+    <p> Welcome to Map Your Meal, where you actually get some sense of time as to how long something will take you </p>
+
+    <!-- the ng-view directive is where our templates will be loaded into when naviagted to -->
+    <p> Ready to get started? <p>
+    
+
+    <!-- ToDo: Make this button Dissappear once clicked -->
+    <a class="recipeEntry" href="#/entry"><input type="submit" value="Map My Recipe!"></input></a>
+
+    <div ng-view></div>
+
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular-route/angular-route.js"></script>
+
+    <script src="app/entry/entry.js"></script>
+    <script src="app/display/display.js"></script>
+    <script src="app/app.js"></script>
+
+  </body>
+</html>
+
+  </body>
+</html>
