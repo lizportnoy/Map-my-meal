@@ -3,11 +3,11 @@
 <h3> {{recipeName }} </h3>
 <ol>
   <li ng-repeat="step in recipeSteps" >
-    {{ displayedTime}} : {{step[0]}}
+    {{ formatTime(mealTime, step[2]) }} : {{step[0]}}
   </li>
 </ol>
 
-<h3> All Done! Should be ready by {{mealTime}} </h3>
+<h3> All Done! Should be ready by {{formatTime(mealTime,0)}} </h3>
   
   <a class="recipeEntry" href="#/entry"><input type="submit" value="Map Another"></input></a>
 
