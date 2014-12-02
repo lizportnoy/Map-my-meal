@@ -17,4 +17,14 @@ angular.module('mapYourMeal', [
       redirectTo: '/'
     })
 })
+.service('RecipeStorage', function () {
+    var recipeEntry = {};
+    var displayedRecipe = {}
+    recipeEntry.steps = [];
+
+    return {
+      displayedRecipe: displayedRecipe,
+      recipeEntry: recipeEntry
+    };
+});
 

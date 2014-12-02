@@ -1,20 +1,33 @@
 <div id='container' ng-controller='EntryController' >
   <br>
 
-  <form name="RecipeEntry">
+  <form name="RecipeEntry" novalidate>
     <label>Recipe Name:</label>
-    <input name='recipeName' type='text'/>
+    <input name='recipeName' ng-model='entry.recipeName'  type='text' required/>
+    <div ng-show='RecipeEntry.recipeName.$invalid && RecipeEntry.recipeName.$dirty' 
+      class='error'>
+      Must enter a Recipe Name.</div>
+    <label>Meal Time:</label>
+    <input name='mealTime' ng-model='entry.mealTime' type='time' required/>
+    <div ng-show='RecipeEntry.mealTime.$invalid && RecipeEntry.recipeName.$dirty' 
+      class='error'>
+      Must enter a valid mealTime.</div>
     <br>
-    <label>ServingTime:</label>
-    <input name='servingTime' type='time'/>
-    <br>
-    <button>Submit</button>
+    <button ng-click='RecipeEntry.$setPristine(); startRecipe()'> Start Adding Steps</button>
   </form>
 
 
-  <input type=submit ng-click="addFormSpace()" name="add Recipe Step"/>
+  <form  name="RecipeStep" novalidate>
+    <label>Step:</label>
+    <input name='step' ng-model='entry.step'  type='text' required/>
+    <br>
+    <label>Time Estimate (minutes):</label>
+    <input name='timeEst' ng-model='entry.timeEstimate' type='number' required/>
+    <br>
+    <button ng-click= 'RecipeEntry.$setPristine(); addSteps()'> Submit Step</button>
+  </form>
 
-   <a class="recipeDisplay" href="#/display"><input type="submit" value="I'm Done! Take me to my map" </input></a>
+   <a class="recipeDisplay" href="#/display"><input ng-click= "sendRecipe()" type="submit" value="I'm Done! Take me to my map" </input></a>
 
 
 </div>
